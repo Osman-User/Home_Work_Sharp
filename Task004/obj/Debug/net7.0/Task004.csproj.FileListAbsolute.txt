@@ -1,0 +1,15 @@
+F:\GeekBrains\Home_Work_C#\Task004\bin\Debug\net7.0\Task004.exe
+F:\GeekBrains\Home_Work_C#\Task004\bin\Debug\net7.0\Task004.deps.json
+F:\GeekBrains\Home_Work_C#\Task004\bin\Debug\net7.0\Task004.runtimeconfig.json
+F:\GeekBrains\Home_Work_C#\Task004\bin\Debug\net7.0\Task004.dll
+F:\GeekBrains\Home_Work_C#\Task004\bin\Debug\net7.0\Task004.pdb
+F:\GeekBrains\Home_Work_C#\Task004\obj\Debug\net7.0\Task004.csproj.AssemblyReference.cache
+F:\GeekBrains\Home_Work_C#\Task004\obj\Debug\net7.0\Task004.GeneratedMSBuildEditorConfig.editorconfig
+F:\GeekBrains\Home_Work_C#\Task004\obj\Debug\net7.0\Task004.AssemblyInfoInputs.cache
+F:\GeekBrains\Home_Work_C#\Task004\obj\Debug\net7.0\Task004.AssemblyInfo.cs
+F:\GeekBrains\Home_Work_C#\Task004\obj\Debug\net7.0\Task004.csproj.CoreCompileInputs.cache
+F:\GeekBrains\Home_Work_C#\Task004\obj\Debug\net7.0\Task004.dll
+F:\GeekBrains\Home_Work_C#\Task004\obj\Debug\net7.0\refint\Task004.dll
+F:\GeekBrains\Home_Work_C#\Task004\obj\Debug\net7.0\Task004.pdb
+F:\GeekBrains\Home_Work_C#\Task004\obj\Debug\net7.0\Task004.genruntimeconfig.cache
+F:\GeekBrains\Home_Work_C#\Task004\obj\Debug\net7.0\ref\Task004.dll
