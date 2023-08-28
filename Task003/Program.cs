@@ -15,3 +15,4 @@ else
 {
     Console.WriteLine($"Число {num} нечетное");
 }
+Console.Readline();
