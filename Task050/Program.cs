@@ -1,5 +1,4 @@
-﻿// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
-// Во вводе первая цифра - номер строки, вторая - столбца. Цифры не больше 9.
+﻿// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет. Во вводе первая цифра - номер строки, вторая - столбца. Цифры не больше 9.
 // Например, задан массив:
 // 1 4 7 2
 // 5 9 2 3
@@ -7,54 +6,60 @@
 
 // 17 -> такого числа в массиве нет
 
-void CreateRandomArray(int[,] arr)
+
+Console.Clear();
+Console.WriteLine("This program find array element by the entered indexes.");
+int numberRow = EnterUserData("Enter number of rows:");
+int numberCol = EnterUserData("Enter number of columns:");
+int lowerLim = EnterUserData("Enter lower limit for random range:");
+int upperLim = EnterUserData("Enter upper limit for random range:");
+int precision = EnterUserData("Enter precision for numbers: ");
+double[,] randomArray = new double[numberRow, numberCol];
+
+FillArray(randomArray, numberRow, numberCol, lowerLim, upperLim, precision);
+PrintArray(randomArray);
+int indexRow = EnterUserData("Enter row index:") - 1;//make offset "-1" to start array indexes from 1
+int indexCol = EnterUserData("Enter column index:") - 1;//make offset "-1" to start array indexes from 1
+
+if (indexRow < 0 ||
+    indexRow > randomArray.GetLength(0) ||
+    indexCol < 0 ||
+    indexCol > randomArray.GetLength(1))
 {
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            arr[i, j] = new Random().Next(1, 100);
-        }
-    }
+    Console.WriteLine("There is no any array element with the entered indexes. Try again!");
+}
+else
+{
+    Console.WriteLine(randomArray[indexRow, indexCol]);
 }
 
-void ShowArray(int[,] arr)
+double[,] FillArray(double[,] array, int numberRow, int numberCol, int lowerLim, int upperLim, int precision)
 {
-    for (int i = 0; i < arr.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{arr[i, j]} ");
+            double randomNum = new Random().NextDouble() * (upperLim - lowerLim);
+            array[i, j] = Math.Round(randomNum, precision);
+        }
+    }
+    return array;
+}
+
+void PrintArray(double[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
         }
         Console.WriteLine();
     }
 }
 
-void CheckNumber(int[,] arr)
+int EnterUserData(string nameUserData)
 {
-    Console.WriteLine();
-    Console.Write("Введите позицию на какой строке: ");
-    int linePosition = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Введите позицию в каком столбце: ");
-    int columnPosition = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Введите число для проверки: ");
-    int numberToCheck = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine();
-
-    if (arr[linePosition - 1, columnPosition - 1] == numberToCheck)
-    {
-        Console.WriteLine($"{numberToCheck} - такое число в массиве есть");
-    }
-    else
-    {
-        Console.WriteLine($"{numberToCheck} - такого числа в массиве нет");
-    }
+    Console.Write($"{nameUserData}");
+    return Convert.ToInt32(Console.ReadLine());
 }
-
-const int numberOfLines = 5;
-const int numberOfColumns = 4;
-int[,] array = new int[numberOfLines, numberOfColumns];
-
-CreateRandomArray(array);
-ShowArray(array);
-CheckNumber(array);
