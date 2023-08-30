@@ -13,7 +13,7 @@ FillSpiralArray(spiralArray, value);
 
 // Вывод заполненного массива
 
-matrixMultiplicationPlusAddition
+
 for (int i = 0; i < 4; i++)
 
 {
